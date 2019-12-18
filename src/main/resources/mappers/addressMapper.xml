@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="addressMapper">
+       <select id="list" resultType="com.example.domain.AddressVO">
+            select * from tbl_address
+       </select>
+       <insert id="insert">
+            insert into tbl_address(id,name, tel, address)
+            values(#{id}, #{name}, #{tel}, #{address})
+       </insert>
+       <delete id="delete">
+             delete from tbl_address where id=#{id}
+       </delete>
+       <select id="read" resultType="com.example.domain.AddressVO">
+             select * from tbl_address where id=#{id}
+       </select>
+       <update id="update">
+       update tbl_address set name=#{name}, tel=#{tel}, address=#{address}
+       where id=#{id}
+       </update>
+</mapper>
